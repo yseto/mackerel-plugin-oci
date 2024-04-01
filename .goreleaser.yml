@@ -1,0 +1,33 @@
+builds:
+  - binary: mackerel-plugin-oci-nlb
+    id: mackerel-plugin-oci-nlb
+    main: ./cmd/nlb
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+  - binary: mackerel-plugin-oci-flb
+    id: mackerel-plugin-oci-flb
+    main: ./cmd/flb
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+  - binary: mackerel-plugin-oci-mds
+    id: mackerel-plugin-oci-mds
+    main: ./cmd/mds
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+archives:
+  - format: zip
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
+release:
+  github:
+    owner: yseto
+    name: mackerel-plugin-oci
+
