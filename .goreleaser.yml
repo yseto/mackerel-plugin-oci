@@ -7,6 +7,8 @@ builds:
     goarch:
       - amd64
       - arm64
+    env:
+      - CGO_ENABLED=0
   - binary: mackerel-plugin-oci-flb
     id: mackerel-plugin-oci-flb
     main: ./cmd/flb
@@ -15,6 +17,8 @@ builds:
     goarch:
       - amd64
       - arm64
+    env:
+      - CGO_ENABLED=0
   - binary: mackerel-plugin-oci-mds
     id: mackerel-plugin-oci-mds
     main: ./cmd/mds
@@ -23,6 +27,8 @@ builds:
     goarch:
       - amd64
       - arm64
+    env:
+      - CGO_ENABLED=0
 archives:
   - format: zip
     name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
